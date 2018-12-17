@@ -3,7 +3,7 @@ DISLCAINMER: Origial dataset is too large to host on github please contact me fo
 ----------------------------------------------------
 My Prototype web application for my FYP.
 
-Look at the CodeHighligted Folder for images of code relating to the below: 
+Look at the CodeDeclaration.pdf for images of code relating to the below: 
 
 - FLASK SERVER/ DASH CODE *Highlighted Code is not my own*
 - All the code on the Jupyter Notebooks is my own. Although it does use SkLearn libraries to help to make a prediction.
