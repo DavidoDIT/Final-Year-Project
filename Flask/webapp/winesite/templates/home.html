@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="content-section col-centered">
+    <form method="POST" action="">
+        <legend class="border-bottom mb-4">Input your wine details and get a rating</legend>
+
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.description.label(class="form-control-label") }}
+            {% if form.description.errors %}
+            {{ form.description(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.description.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.description(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.variety.label(class="form-control-label") }}
+            {% if form.variety.errors %}
+            {{ form.variety(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.variety.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.variety(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.country.label(class="form-control-label") }}
+            {% if form.country.errors %}
+            {{ form.country(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.country.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.country(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+
+{% for review in reviews.items %}
+<article class="media content-section">
+    <img class="rounded-circle account-img"
+         src="{{ url_for('static', filename='profilephotos/' + review.author.image) }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="{{ url_for('user_reviews', username=review.author.username )}}">{{
+                review.author.username }}</a>
+            <small class="text-muted">{{ review.date_posted.strftime('%Y-%m-%d') }}</small>
+        </div>
+        <h2><a class="article-title" href="{{ url_for('review', review_id=review.id) }}">{{ review.title }}</a></h2>
+        <p class="article-content"><strong>Variety:</strong> {{ review.variety }}</p>
+        <p class="article-content">{{ review.content }}</p>
+        <p class="article-content"><strong>Rating:</strong> {{ review.rating }}</p>
+    </div>
+</article>
+
+{% endfor %}
+{% for page_num in reviews.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+{% if page_num %}
+{% if reviews.page == page_num %}
+<a class="btn btn-info mb-4" href="{{ url_for('home', page=page_num) }}"> {{ page_num }} </a>
+{% else %}
+<a class="btn btn-outline-info mb-4" href="{{ url_for('home', page=page_num) }}"> {{ page_num }} </a>
+{% endif %}
+{% else %}
+
+{% endif %}
+{% endfor %}
+{% endblock content %}

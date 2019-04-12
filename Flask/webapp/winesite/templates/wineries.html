@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+<title>Wineries</title>
+
+
+<h3 class="text-center">Check out the Vineyards spread all over the world!</h3>
+<!--The div element for the map, This uses the google maps API to call coordinates of wineries and input them
+    through a for loop to show up on the map -->
+<div class="content-section" id="map"></div>
+<script>
+
+function initMap() {
+    var map=document.getElementById('map');
+
+    var markerLocations=[
+    [47.2260,4.9687],
+    [47.1595,4.9515],
+    [47.1591,4.9546],
+    [47.2164,4.9660],
+    [45.2140,123.1878],
+    [47.2085,4.9638],
+    [47.2191,4.9588],
+    [34.6546,139.1010],
+    [34.9063,138.8397],
+    [38.4871,122.4104],
+    [38.4274,122.3943],
+    [38.5027,122.4284],
+    [38.4478,122.4120],
+    [38.0751,78.2894],
+    [38.0153,78.8363],
+    [37.8928,8.5568],
+    [45.3504,123.1361]
+   ];
+
+   var mapProperties={
+       center: new google.maps.LatLng(47.2260,4.9687),
+       zoom:2.5
+};
+    var map=new google.maps.Map(map,mapProperties);
+    var j;
+    for (j=0 ; j<markerLocations.length ; j++){
+        var marker=new google.maps.Marker({
+            position:new google.maps.LatLng(markerLocations[j][0],markerLocations[j][1]),
+            animation:google.maps.Animation.BOUNCE
+        });
+
+        marker.setMap(map);
+       }
+     }
+
+
+</script>
+
+<div class="filler-wineries"></div>
+
+
+{% endblock content %}

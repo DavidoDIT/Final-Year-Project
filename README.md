@@ -1,13 +1,33 @@
-# FYP-Prototype
-DISLCAINMER: Origial dataset is too large to host on github please contact me for the original wine reviews dataset. Or it can be taken from: https://www.kaggle.com/zynicide/wine-reviews
-----------------------------------------------------
-My Prototype web application for my FYP.
+# David O'Neill, C15737551, Final Year Project
 
-Look at the CodeDeclaration.pdf for images of code relating to the below: 
+This is my submission for my final year project. It uses predictive analytics, deep learning and flask development to build a webapp thattakes users inputs an returns to them a predictions from the prediction model. It also serves as place for users to share reviews.
+It is availible to view at [GrapeReview](https://www.grapereview.ml)
+Or a Demo could be viewed [HERE](https://drive.google.com/file/d/1AgGAakFurt9rPMXxCOztFL2WEhz5zL1-/view?usp=sharing)
 
-- FLASK SERVER/ DASH CODE *Highlighted Code is not my own*
-- All the code on the Jupyter Notebooks is my own. Although it does use SkLearn libraries to help to make a prediction.
------------------------------------------------------
-To run the Jupyter notebooks you must install Jupyter Notebooks onto your machine and then run Jupyter Notebooks from the command line and this will open your browser. You then clone the notebook code to your machine along with the datasets.
+## Run Locally
 
-To run the Flask application server please clone the code to your machine, open your command line and 'cd' to the directory holding the app.py file. From here please enter 'python app.py' and copy and paste the local IP address it gives you into your browser.
+You can run this code locally by cloning the repo into your current directory.
+
+
+
+Ensure you have Python and Jupyter Notebooks installed on your machine. Then cd to the directory that contains the app.py file. Then in your terminal run
+```bash
+pip install -r requiremnts.txt
+```
+
+And then
+```bash
+python app.py
+```
+
+To view in your browser, go to [localhost](http://0.0.0.0:5000/)
+
+To run Jupyter Notebook cd to the directory holding the notebook files and run
+```bash
+jupyter notebook
+```
+
+A browser window should open.
+
+Thank you.
+

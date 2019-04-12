@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+<article class="media content-section">
+    <img class="rounded-circle account-img"
+         src="{{ url_for('static', filename='profilephotos/' + review.author.image) }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="{{ url_for('user_reviews', username=review.author.username )}}">{{
+                review.author.username }}</a>
+            <small class="text-muted">{{ review.date_posted.strftime('%Y-%m-%d') }}</small>
+        </div>
+        <h2 class="article-title"> {{ review.title }}</h2>
+        <p class="article-content"><strong>Variety: </strong>{{ review.variety }}</p>
+        <p class="article-content">{{ review.content }}</p>
+        <p class="article-content"><strong>Rating: </strong>{{ review.rating }}</p>
+
+        <div class="article-metadata">
+            {% if review.author == current_user %}
+            <div>
+                <a class="btn btn-secondary btn-sm m-1" href="{{ url_for('update_review', review_id=review.id) }}">Update</a>
+                <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">
+                    Delete
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Bootstrap Model Code Taken from Bootstrap.com-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to Delete?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                You can always make a new one!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <form action="{{ url_for('delete_review', review_id=review.id) }}" method="POST">
+                    <input class="btn btn-danger" type="submit" value="Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="filler"></div>
+{% endblock content %}

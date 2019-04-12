@@ -1,0 +1,141 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+#logo {
+  max-width:120px;
+  margin-top:-6px;
+  margin-bottom:-6px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+h1, h2, h3, h4, h6 {
+  color: #444444;
+}
+
+.bg-steel {
+  background-color: #7a0611;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+
+.page-footer {
+  background-color: #7a0611;
+  color: #ffffff;
+  bottom 0;
+}
+
+
+#map {
+  height: 400px;  /* The height is 400 pixels */
+  width: 100%;  /* The width is the width of the web page */
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #7a0611;
+  border-radius: 30px;
+  margin-bottom: 20px;
+
+}
+
+.prediction {
+  margin-top: 5%
+}
+.filler {
+  padding-bottom: 50%;
+}
+
+.filler-login {
+  padding-bottom: 22.5%;
+}
+
+.filler-wineries {
+  padding-bottom: 12%;
+}
+
+.filler-user {
+ padding-bottom: 1-%;
+}
+
+.filler-pred {
+  padding-bottom:60%;
+}
+
+#map {
+        height: 425px;
+        width: 100%;
+      }
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+
+
+.btn-outline-info {
+   color: #7a0611
+}
+
+.btn-info {
+   color: #7a0611
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
